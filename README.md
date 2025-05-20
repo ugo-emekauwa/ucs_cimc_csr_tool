@@ -81,7 +81,7 @@ After fulfilling the requirements listed in the [**Prerequisites**](https://gith
 - Ensure write access permissions are set on the remote server for the folder specified for the **csr_remote_server_filepath** variable.
 - For TFTP, set the **csr_remote_server_filepath** variable to just "/".
 
-## Related Tools:
+## Related Tools
 Here are similar tools to help administer and manage Cisco UCS environments.
 - [Cisco IMM Automation Tools](https://github.com/ugo-emekauwa/cisco-imm-automation-tools)
 - [Automated OS Install Tool for Cisco Intersight](https://github.com/ugo-emekauwa/intersight-os-installer)
