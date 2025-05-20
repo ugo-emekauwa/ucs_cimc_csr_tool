@@ -48,9 +48,44 @@ After fulfilling the requirements listed in the [**Prerequisites**](https://gith
 6. Save the changes you have made to the ucs_cimc_csr_tool.py file.
 7. Run the ucs_cimc_csr_tool.py file.
 
+## Notes
+- For certificate signing requests, some remote servers may not work with SCP or SFTP. In such cases, FTP or TFTP should work.
+- When using FTP or TFTP, ensure upload or write access is configured. For example:
+  - On Ubuntu 22.04.x, if using vsftpd:
+    1. Edit the FTP server configuration file.
+       ```
+       sudo nano /etc/vsftpd.conf
+       ```
+    2. Uncomment or set **write_enable** within the FTP server configuration file.
+       ```
+       write_enable=YES
+       ```
+    3. Restart the FTP server.
+       ```
+       sudo systemctl restart vsftpd.service
+       ```
+       
+  - On Ubuntu 22.04.x, if using tftpd-hpa:
+    1. Edit the TFTP server configuration file.
+       ```
+       sudo nano /etc/default/tftpd-hpa
+       ```
+    2. Set **TFTP_OPTIONS** within the TFTP server configuration file.
+       ```
+       TFTP_OPTIONS="--secure --create"
+       ```
+    3. Restart the TFTP server.
+       ```
+       sudo systemctl restart tftpd-hpa
+       ```
+- Ensure write access permissions are set on the remote server for the folder specified for the **csr_remote_server_filepath** variable.
+- For TFTP, set the **csr_remote_server_filepath** variable to just "/".
+
 ## Related Tools:
 Here are similar tools to help administer and manage Cisco UCS environments.
 - [Cisco IMM Automation Tools](https://github.com/ugo-emekauwa/cisco-imm-automation-tools)
+- [Automated OS Install Tool for Cisco Intersight](https://github.com/ugo-emekauwa/intersight-os-installer)
+- [Automated Server Power Control Tool for Cisco Intersight](https://github.com/ugo-emekauwa/intersight-server-power-control)
 
 ## Author
 Ugo Emekauwa
