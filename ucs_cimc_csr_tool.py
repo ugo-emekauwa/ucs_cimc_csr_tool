@@ -55,7 +55,7 @@ csr_remote_server = "198.18.133.94"
 csr_remote_server_protocol = "scp"       # Options: ftp, sftp, tftp, scp, none
 csr_remote_server_user = "root"
 csr_remote_server_password = "C1sco12345"
-csr_remote_server_filepath = "/root/tmp/"     # Example: /root/sample_folder/
+csr_remote_server_filepath = "/root/tmp/"     # Example: "/root/sample_folder/". For TFTP, just use "/".
 csr_remote_server_file_extension = ".txt"
 csr_signature_algorithm = "sha384"       # Options: sha1, sha256, sha384, sha512
 
@@ -418,7 +418,7 @@ def generate_ucs_cimc_certificate_signing_request(
         ucs_cimc_password
         )
     
-    # Generate a Self-Signed Certificate
+    # Generate a Certificate Signing Request
     ucs_cimc_headers = {
         "Content-Type": "application/xml"
         }
