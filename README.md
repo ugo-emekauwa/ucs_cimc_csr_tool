@@ -80,6 +80,9 @@ After fulfilling the requirements listed in the [**Prerequisites**](https://gith
        ```
 - Ensure write access permissions are set on the remote server for the folder specified for the **csr_remote_server_filepath** variable.
 - For TFTP, set the **csr_remote_server_filepath** variable to just "/".
+  ```
+  csr_remote_server_filepath = "/"
+  ```
 
 ## Related Tools
 Here are similar tools to help administer and manage Cisco UCS environments.
